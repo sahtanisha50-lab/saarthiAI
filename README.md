@@ -1,4 +1,5 @@
-# NorthPeak Digital
+# SAARTHI AI
+
 
 A complete, production-quality, responsive one-page agency website built for a fictional digital agency named "NorthPeak Digital".
 
