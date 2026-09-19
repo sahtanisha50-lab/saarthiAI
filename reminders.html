@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="desktop_standard" name="shell-type"/>
+<title>Saarthi AI - My Reminders & Daily Schedule</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#184434",
+        "primary-container": "#315c4a",
+        "primary-fixed": "#beedd5",
+        "surface-container": "#e4effd",
+        "surface-container-low": "#edf4ff",
+        "on-surface": "#121d26",
+        "on-surface-variant": "#414944"
+      }
+    }
+  }
+};
+</script>
+<style>
+  body {
+    min-height: max(884px, 100dvh);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FBF9F5;
+  }
+  ::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body class="bg-[#FBF9F5] font-sans text-[#121d26] flex flex-col min-h-screen antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <a class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-on-surface font-semibold text-[16px] transition-all active:scale-95" href="index.html">
+          <span class="material-symbols-outlined text-[22px]">arrow_back</span>
+          <span>Dashboard</span>
+        </a>
+        <div class="h-6 w-px bg-gray-300"></div>
+        <div class="flex items-center gap-3">
+          <img alt="Saarthi AI Logo" class="w-10 h-10 object-cover rounded-xl border border-[#184434]/20 shadow-xs" src="logo.jpg"/>
+          <div class="flex flex-col">
+            <span class="text-[20px] font-extrabold tracking-tight text-[#184434] leading-tight">Saarthi AI</span>
+            <span class="text-[13px] text-gray-500 font-medium">Your Intelligent Daily Companion</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-[#184434] font-bold text-[16px] border border-gray-200 transition-all active:scale-95" id="readScreenBtn" type="button">
+          <span class="material-symbols-outlined text-[20px]">volume_up</span>
+          <span class="hidden sm:inline">Read Screen</span>
+        </button>
+        <div class="flex items-center gap-2.5 pl-2 border-l border-gray-300">
+          <div class="w-10 h-10 rounded-full bg-[#184434] text-white flex items-center justify-center font-bold text-[16px] shadow-sm">MS</div>
+          <div class="hidden md:flex flex-col">
+            <span class="font-bold text-[15px] text-[#121d26] leading-tight">Mrs. Sharma</span>
+            <span class="text-[13px] text-gray-500">Care Circle active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 py-8">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-[32px] md:text-[38px] font-extrabold text-[#121d26]">My Reminders &amp; Daily Schedule</h1>
+        <p class="text-[18px] text-gray-600 mt-1">Daily medicines, doctor visits, and water alerts managed effortlessly with Saarthi.</p>
+      </div>
+      <button class="min-h-[56px] px-6 rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-extrabold text-[17px] flex items-center gap-2 shadow-md active:scale-98 transition-all" onclick="addReminderModal()">
+        <span class="material-symbols-outlined text-[26px]">add_circle</span>
+        <span>Add New Reminder</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Left Column: Reminders List (7 cols) -->
+      <div class="lg:col-span-7 space-y-4" id="reminders-list">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[30px]">check_circle</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 font-bold line-through text-[16px]">08:00 AM</span>
+                <span class="px-3 py-0.5 rounded-full bg-slate-100 text-gray-600 font-bold text-[13px]">Completed</span>
+              </div>
+              <h3 class="text-[20px] font-extrabold text-[#121d26]">Metformin 500mg</h3>
+              <p class="text-[15px] text-gray-600">Taken after breakfast with warm water.</p>
+            </div>
+          </div>
+          <span class="text-emerald-700 font-bold text-[15px] flex items-center gap-1">
+            <span class="material-symbols-outlined text-[20px]">done_all</span> Taken 8:05 AM
+          </span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border-2 border-emerald-300 flex items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[30px]">pill</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-[#184434] font-extrabold text-[16px]">06:00 PM</span>
+                <span class="px-3 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-extrabold text-[13px]">Upcoming</span>
+              </div>
+              <h3 class="text-[20px] font-extrabold text-[#121d26]">Amlodipine 5mg</h3>
+              <p class="text-[15px] text-gray-600">Blood Pressure tablet after dinner.</p>
+            </div>
+          </div>
+          <button class="px-5 py-2.5 rounded-xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[15px] shadow-sm active:scale-95 transition-all" onclick="alert('Marked as taken!')">
+            Mark Taken
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[30px]">medical_services</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-amber-800 font-extrabold text-[16px]">Tomorrow 11:00 AM</span>
+              </div>
+              <h3 class="text-[20px] font-extrabold text-[#121d26]">Dr. R. Kapoor Consultation</h3>
+              <p class="text-[15px] text-gray-600">Fortis Memorial Clinic • Routine checkup &amp; prescription refill.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Settings & Care Circle (5 cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 space-y-4">
+          <h3 class="text-[20px] font-extrabold text-[#121d26] flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#184434] text-[24px]">notifications_active</span>
+            <span>Reminder Preferences</span>
+          </h3>
+          <p class="text-[15px] text-gray-600">Saarthi reminds you with gentle voice alerts and soft chime notifications.</p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-gray-100">
+              <span class="font-bold text-[16px] text-[#121d26]">Voice Reminders</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-[#184434] font-bold text-[14px]">ON</span>
+            </div>
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-gray-100">
+              <span class="font-bold text-[16px] text-[#121d26]">Caregiver SMS Sync</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-[#184434] font-bold text-[14px]">ON</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 rounded-3xl p-6 border border-emerald-200 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#184434] text-white flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[28px]">family_restroom</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-[17px] text-[#121d26]">Family Circle Synced</h4>
+            <p class="text-[14px] text-gray-600 mt-0.5">Anita &amp; Rohit will be automatically notified when evening medicine is marked done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function addReminderModal() {
+      const name = prompt("Enter new reminder name (e.g., Water Alert, Evening Med):");
+      if (name) {
+        const time = prompt("Enter time (e.g., 5:00 PM):") || "Scheduled";
+        const list = document.getElementById('reminders-list');
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex items-center justify-between gap-4";
+        card.innerHTML = `
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[30px]">alarm</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-[#184434] font-extrabold text-[16px]">${time}</span>
+              </div>
+              <h3 class="text-[20px] font-extrabold text-[#121d26]">${name}</h3>
+              <p class="text-[15px] text-gray-600">Added to your daily schedule.</p>
+            </div>
+          </div>
+          <button class="px-5 py-2.5 rounded-xl bg-[#184434] text-white font-bold text-[15px]" onclick="alert('Marked as done!')">Mark Done</button>
+        `;
+        list.prepend(card);
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.speak(new SpeechSynthesisUtterance(`Reminder for ${name} added at ${time}`));
+        }
+      }
+    }
+
+    document.getElementById('readScreenBtn')?.addEventListener('click', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.speak(new SpeechSynthesisUtterance("My Reminders and Daily Schedule. You have Morning Medicine completed at 8 AM, and Evening Medicine scheduled at 6 PM."));
+      }
+    });
+  </script>
+</body>
+</html>
