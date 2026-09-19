@@ -7,10 +7,14 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "node server/server.js",
+    "build": "echo 'Static and Node assets ready'",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [
     "senior-companion",

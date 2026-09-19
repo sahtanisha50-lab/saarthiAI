@@ -41,8 +41,8 @@ app.get('*', (req, res) => {
 app.use(errorHandler);
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`[Saarthi AI Server] Listening on http://localhost:${PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`[Saarthi AI Server] Listening on http://0.0.0.0:${PORT}`);
   });
 }
 
