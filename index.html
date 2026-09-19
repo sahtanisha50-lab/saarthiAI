@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
-<meta content="mobile_tab" name="shell-type"/>
-<title>Saarthi AI - Senior Companion</title>
+<meta content="desktop_standard" name="shell-type"/>
+<title>Saarthi AI - Senior Intelligent Daily Companion</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -16,75 +16,16 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        "error-container": "#ffdad6",
-        "on-secondary": "#ffffff",
-        "secondary": "#58605c",
-        "primary-fixed": "#beedd5",
-        "tertiary": "#6d2600",
-        "on-secondary-fixed-variant": "#414944",
-        "surface-tint": "#3c6754",
-        "surface-container-lowest": "#ffffff",
-        "on-primary-fixed-variant": "#234f3d",
-        "on-error-container": "#93000a",
-        "on-primary": "#ffffff",
-        "on-secondary-container": "#5c6460",
-        "on-primary-fixed": "#002115",
-        "inverse-surface": "#27313c",
-        "surface-container-low": "#edf4ff",
-        "background": "#f7f9ff",
-        "secondary-fixed-dim": "#c0c8c3",
+        "primary": "#184434",
         "primary-container": "#315c4a",
-        "on-tertiary-container": "#ffb89b",
-        "on-error": "#ffffff",
-        "secondary-container": "#dae2dc",
-        "surface-container-high": "#dfe9f7",
-        "surface-bright": "#f7f9ff",
-        "error": "#ba1a1a",
-        "outline-variant": "#c0c8c2",
+        "primary-fixed": "#beedd5",
         "surface-container": "#e4effd",
-        "primary-fixed-dim": "#a2d1ba",
-        "outline": "#717974",
-        "surface": "#f7f9ff",
-        "tertiary-fixed": "#ffdbcd",
-        "inverse-on-surface": "#e8f2ff",
-        "on-tertiary-fixed": "#360f00",
-        "tertiary-container": "#933600",
-        "inverse-primary": "#a2d1ba",
-        "on-background": "#121d26",
-        "tertiary-fixed-dim": "#ffb597",
-        "surface-dim": "#d1dbe8",
-        "on-primary-container": "#a4d2bc",
-        "surface-container-highest": "#d9e3f1",
-        "secondary-fixed": "#dce4df",
+        "surface-container-low": "#edf4ff",
+        "surface-container-lowest": "#ffffff",
         "on-surface": "#121d26",
-        "surface-variant": "#d9e3f1",
         "on-surface-variant": "#414944",
-        "on-secondary-fixed": "#161d1a",
-        "on-tertiary-fixed-variant": "#7d2d00",
-        "on-tertiary": "#ffffff",
-        "primary": "#184434"
-      },
-      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-      spacing: {
-        "space-xl": "2.5rem", gutter: "1.5rem", "space-sm": "0.75rem", "margin-mobile": "1.25rem",
-        margin: "2rem", "gutter-mobile": "1rem", "space-lg": "1.75rem", "space-md": "1.25rem", "space-xs": "0.5rem"
-      },
-      fontFamily: {
-        "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"],
-        "body-xl": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"],
-        "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"]
-      },
-      fontSize: {
-        "label-lg": ["20px", { lineHeight: "28px", fontWeight: "700" }],
-        "label-md": ["18px", { lineHeight: "26px", fontWeight: "600" }],
-        "headline-xl": ["40px", { lineHeight: "52px", fontWeight: "700" }],
-        "body-xl": ["22px", { lineHeight: "32px", fontWeight: "500" }],
-        "headline-xl-mobile": ["32px", { lineHeight: "42px", fontWeight: "700" }],
-        "headline-lg-mobile": ["26px", { lineHeight: "36px", fontWeight: "700" }],
-        "body-lg": ["20px", { lineHeight: "30px", fontWeight: "400" }],
-        "body-md": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-        "headline-lg": ["32px", { lineHeight: "42px", fontWeight: "700" }],
-        "headline-md": ["24px", { lineHeight: "34px", fontWeight: "600" }]
+        "tertiary": "#6d2600",
+        "tertiary-fixed": "#ffdbcd"
       }
     }
   }
@@ -92,370 +33,407 @@ tailwind.config = {
 </script>
 <style>
   body {
-    min-height: max(884px, 100dvh);
+    min-height: 100vh;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FBF9F5;
   }
-  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
-  .pt-safe { padding-top: max(env(safe-area-inset-top, 0px), 12px); }
-  ::-webkit-scrollbar { display: none; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #FBF9F5; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
   .tab-view { display: none; }
   .tab-view.active { display: flex; }
 </style>
 </head>
-<body class="bg-surface font-body-lg text-body-lg text-on-surface flex flex-col antialiased">
+<body class="bg-[#FBF9F5] font-sans text-[#121d26] flex flex-col min-h-screen antialiased selection:bg-[#beedd5]">
   
-  <!-- GLOBAL HEADER -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
-    <div class="h-20 px-margin-mobile flex items-center justify-between gap-space-sm max-w-lg mx-auto">
-      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
-        <img alt="Saarthi AI Logo" class="w-11 h-11 object-cover rounded-xl border border-primary/20 shadow-sm" src="logo.jpg"/>
+  <!-- GLOBAL DESKTOP HEADER -->
+  <header class="sticky top-0 z-50 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Logo -->
+      <div class="flex items-center gap-4 cursor-pointer" onclick="switchTab('home')">
+        <img alt="Saarthi AI Logo" class="w-11 h-11 object-cover rounded-xl border border-[#184434]/20 shadow-sm" src="logo.jpg"/>
         <div class="flex flex-col">
-          <div class="flex items-baseline gap-1">
-            <span class="font-headline-md text-headline-md text-primary tracking-tight">Saarthi</span>
-            <span class="font-label-md text-label-md text-on-surface">AI</span>
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-[24px] font-extrabold tracking-tight text-[#184434]">Saarthi</span>
+            <span class="text-[18px] font-bold text-[#121d26]">AI</span>
+            <span class="ml-2 px-2.5 py-0.5 rounded-full bg-emerald-100 text-[#184434] text-[12px] font-bold uppercase tracking-wider hidden sm:inline-block">Desktop Mode</span>
           </div>
-          <span class="font-body-md text-body-md text-on-surface-variant -mt-1" id="header-subtitle">Your Intelligent Daily Companion</span>
+          <span class="text-[13px] text-gray-500 font-medium -mt-1 hidden sm:inline" id="header-subtitle">Your Intelligent Daily Companion</span>
         </div>
       </div>
-      <div class="flex items-center gap-space-xs">
-        <button aria-label="Profile" class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-on-primary active:scale-95 transition-transform" type="button" onclick="switchTab('home')">
-          <span class="material-symbols-outlined text-on-primary text-[24px]">person</span>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-1.5 bg-white p-1.5 rounded-2xl border border-gray-200 shadow-xs">
+        <button class="px-4 py-2 rounded-xl text-[15px] font-bold transition-all text-[#184434] bg-emerald-100 nav-tab" id="nav-home" onclick="switchTab('home')">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">home</span> Home
+          </span>
         </button>
+        <button class="px-4 py-2 rounded-xl text-[15px] font-bold transition-all text-gray-600 hover:bg-slate-100 nav-tab" id="nav-reminders" onclick="switchTab('reminders')">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">alarm</span> Reminders
+          </span>
+        </button>
+        <button class="px-4 py-2 rounded-xl text-[15px] font-bold transition-all text-gray-600 hover:bg-slate-100 nav-tab" id="nav-safety" onclick="switchTab('safety')">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">shield</span> Trust Shield
+          </span>
+        </button>
+        <button class="px-4 py-2 rounded-xl text-[15px] font-bold transition-all text-gray-600 hover:bg-slate-100 nav-tab" id="nav-explain" onclick="switchTab('explain')">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">description</span> Explain Document
+          </span>
+        </button>
+      </nav>
+
+      <!-- Right Action Tools & Profile -->
+      <div class="flex items-center gap-3">
+        <button aria-label="Listen to today's summary spoken aloud" class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-[#184434] font-bold text-[15px] border border-gray-200 transition-all active:scale-95" id="audioReadBtn" type="button">
+          <span class="material-symbols-outlined text-[22px] text-[#184434]" id="audioIcon">volume_up</span>
+          <span class="hidden lg:inline" id="audioText">Read Screen</span>
+        </button>
+
+        <div class="flex items-center gap-3 pl-2 border-l border-gray-300">
+          <button aria-label="Profile" class="w-10 h-10 rounded-full bg-[#184434] text-white flex items-center justify-center font-bold text-[16px] shadow-sm hover:scale-105 active:scale-95 transition-transform" type="button" onclick="switchTab('home')">
+            <span class="material-symbols-outlined text-white text-[24px]">person</span>
+          </button>
+          <div class="hidden xl:flex flex-col text-left">
+            <span class="font-bold text-[15px] text-[#121d26] leading-tight">Mrs. Sharma</span>
+            <span class="text-[12px] text-emerald-700 font-semibold">Senior Mode Active</span>
+          </div>
+        </div>
       </div>
+
     </div>
   </header>
 
-  <!-- MAIN SCROLLABLE CONTAINER -->
-  <main class="flex flex-col relative w-full px-margin-mobile pt-20 pb-36 bg-surface max-w-lg mx-auto">
+  <!-- MAIN SCROLLABLE DESKTOP CONTAINER -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 py-8 flex flex-col gap-6">
 
     <!-- ==================== TAB 1: HOME ==================== -->
-    <div id="view-home" class="tab-view active flex-col w-full space-y-space-md">
-      <!-- Warm Salutation -->
-      <section class="flex flex-col space-y-space-xs">
-        <div class="flex items-center justify-between">
-          <div>
-            <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+    <div id="view-home" class="tab-view active flex-col w-full space-y-6">
+      
+      <!-- Desktop Hero / Warm Salutation Banner -->
+      <section class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <h1 class="text-[30px] md:text-[36px] font-extrabold text-[#184434] tracking-tight">
               Good morning, Mrs. Sharma
             </h1>
-            <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 mt-0.5">
-              <span class="material-symbols-outlined text-[20px] text-tertiary">wb_sunny</span>
-              <span>Tuesday, October 24 • Mild &amp; Sunny 24°C</span>
-            </p>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-[#184434] font-bold text-[14px]">Care Circle Connected</span>
           </div>
+          <p class="text-[18px] text-gray-600 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[24px] text-amber-600">wb_sunny</span>
+            <span>Tuesday, October 24 • Mild & Sunny 24°C • New Delhi</span>
+          </p>
         </div>
-        <!-- Orientation Card with Audio Readout -->
-        <div class="bg-secondary-container/60 rounded-2xl p-space-md shadow-sm flex flex-col space-y-space-sm">
-          <div class="flex items-start gap-space-xs">
-            <div class="w-3.5 h-3.5 rounded-full bg-primary mt-1.5 shrink-0 animate-pulse"></div>
-            <div class="flex flex-col">
-              <p class="font-label-lg text-label-lg text-primary leading-snug">
-                Your day looks calm &amp; peaceful.
+
+        <div class="bg-emerald-50 rounded-2xl p-5 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 max-w-lg">
+          <div class="flex items-start gap-3">
+            <div class="w-3.5 h-3.5 rounded-full bg-[#184434] mt-1.5 shrink-0 animate-pulse"></div>
+            <div>
+              <p class="font-bold text-[17px] text-[#184434] leading-snug">
+                Your day looks calm & peaceful.
               </p>
-              <p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
-                You have 2 key reminders scheduled today. Everything is on track.
+              <p class="text-[14px] text-gray-600 mt-0.5">
+                2 key reminders scheduled today. Everything on track.
               </p>
             </div>
           </div>
-          <button aria-label="Listen to today's summary spoken aloud" class="w-full min-h-[56px] rounded-2xl bg-surface-container-lowest text-primary shadow-sm active:scale-[0.98] transition-all flex items-center justify-center gap-space-xs px-space-md" id="audioReadBtn" type="button">
-            <span class="material-symbols-outlined text-[28px] text-primary" id="audioIcon">volume_up</span>
-            <span class="font-label-lg text-label-lg" id="audioText">Play audio summary</span>
+          <button aria-label="Talk to Saarthi Voice Companion" class="px-5 py-2.5 rounded-xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[15px] flex items-center gap-2 shadow-sm shrink-0 transition-all active:scale-95" type="button" onclick="openVoiceAssistant()">
+            <span class="material-symbols-outlined text-[20px]">mic</span>
+            <span>Voice Assistant</span>
           </button>
         </div>
       </section>
 
-      <!-- 4 Core High-Touch Action Grid -->
-      <section class="flex flex-col space-y-space-xs">
-        <div class="flex items-center justify-between">
-          <h2 class="font-label-lg text-label-lg text-on-surface">What would you like to do?</h2>
-          <span class="font-body-md text-body-md text-on-surface-variant">Tap any card</span>
-        </div>
-        <div class="grid grid-cols-1 gap-space-sm">
-          <!-- Card 1: Talk to Saarthi -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between space-y-space-sm">
-            <div class="flex items-start gap-space-md">
-              <div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-sm">
-                <span class="material-symbols-outlined text-[32px]">mic</span>
+      <!-- Desktop Main 12-Column Responsive Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- LEFT COLUMN: Primary Core Action Grid & Voice Spotlight (7 Columns) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          
+          <div class="flex items-center justify-between">
+            <h2 class="text-[22px] font-extrabold text-[#121d26]">What would you like to do?</h2>
+            <span class="text-[15px] text-gray-500 font-medium">Click any card to begin</span>
+          </div>
+
+          <!-- 4 Core High-Touch Action Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            
+            <!-- Card 1: Talk to Saarthi Voice -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between gap-4 group">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-[#184434] shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[34px]">mic</span>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="text-[20px] font-extrabold text-[#184434]">Talk to Saarthi</h3>
+                  <p class="text-[15px] text-gray-600 mt-1">Speak naturally in Hindi or English, like an old friend.</p>
+                </div>
               </div>
-              <div class="flex flex-col">
-                <span class="font-headline-md text-headline-md text-primary leading-tight">Talk to Saarthi</span>
-                <span class="font-body-lg text-body-lg text-on-surface-variant mt-1">Tell me what you need, like an old friend.</span>
-              </div>
+              <a class="w-full min-h-[50px] rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[16px] flex items-center justify-center gap-2 shadow-sm transition-all" href="voice.html">
+                <span class="material-symbols-outlined text-[22px]">record_voice_over</span>
+                <span>Open Voice Companion</span>
+              </a>
             </div>
-            <button class="w-full min-h-[56px] rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button" onclick="openVoiceAssistant()">
-              <span class="material-symbols-outlined text-[24px]">record_voice_over</span>
-              <span>Start Speaking</span>
+
+            <!-- Card 2: Explain This -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between gap-4 cursor-pointer group" onclick="switchTab('explain')">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center text-[#184434] shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[32px]">photo_camera</span>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="text-[20px] font-extrabold text-[#121d26]">Explain This</h3>
+                  <p class="text-[15px] text-gray-600 mt-1">Scan or upload bills, prescriptions, or letters.</p>
+                </div>
+              </div>
+              <button class="w-full min-h-[50px] rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-[#184434] font-bold text-[16px] flex items-center justify-center gap-2 transition-all" type="button" onclick="switchTab('explain')">
+                <span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+                <span>Scan Document</span>
+              </button>
+            </div>
+
+            <!-- Card 3: Check for Scams (Trust Shield) -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-amber-300 transition-all flex flex-col justify-between gap-4 cursor-pointer group" onclick="switchTab('safety')">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-800 shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[32px]">verified_user</span>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="text-[20px] font-extrabold text-[#121d26]">Check for Scams</h3>
+                  <p class="text-[15px] text-gray-600 mt-1">Verify suspicious SMS, calls, or bank links instantly.</p>
+                </div>
+              </div>
+              <button class="w-full min-h-[50px] rounded-2xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-[16px] flex items-center justify-center gap-2 transition-all" type="button" onclick="switchTab('safety')">
+                <span class="material-symbols-outlined text-[22px]">shield</span>
+                <span>Inspect Safety</span>
+              </button>
+            </div>
+
+            <!-- Card 4: My Reminders -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between gap-4 cursor-pointer group" onclick="switchTab('reminders')">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-[#184434] shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[32px]">medication</span>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="text-[20px] font-extrabold text-[#121d26]">My Reminders</h3>
+                  <p class="text-[15px] text-gray-600 mt-1">Medicines, doctor visits, and daily hydration schedule.</p>
+                </div>
+              </div>
+              <button class="w-full min-h-[50px] rounded-2xl bg-slate-100 hover:bg-slate-200 text-[#121d26] font-bold text-[16px] flex items-center justify-center gap-2 transition-all" type="button" onclick="switchTab('reminders')">
+                <span class="material-symbols-outlined text-[22px]">calendar_today</span>
+                <span>Manage Schedule</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Desktop Interactive Voice Banner -->
+          <div class="bg-gradient-to-r from-[#184434] to-[#2d6a52] text-white rounded-3xl p-6 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-amber-300 text-[26px]">graphic_eq</span>
+                <span class="text-[14px] font-bold uppercase tracking-wider text-emerald-200">Voice Assistance Ready</span>
+              </div>
+              <h3 class="text-[22px] font-extrabold leading-tight">Need help right now? Just ask Saarthi.</h3>
+              <p class="text-[15px] text-emerald-100">Try saying: "Remind me to take medicine at 8 PM" or "Read this prescription".</p>
+            </div>
+            <button class="px-6 py-3.5 rounded-2xl bg-white text-[#184434] hover:bg-emerald-50 font-extrabold text-[17px] shadow-lg shrink-0 flex items-center gap-2.5 transition-all active:scale-95" type="button" onclick="openVoiceAssistant()">
+              <span class="material-symbols-outlined text-[24px]">mic</span>
+              <span>Speak Now</span>
             </button>
           </div>
 
-          <!-- Card 2: Explain This -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors min-h-[84px] cursor-pointer" onclick="switchTab('explain')">
-            <div class="flex items-center gap-space-md min-w-0">
-              <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined text-[30px]">photo_camera</span>
-              </div>
-              <div class="flex flex-col min-w-0">
-                <span class="font-label-lg text-label-lg text-on-surface leading-tight truncate">Explain This</span>
-                <span class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Take a photo of any letter or medicine box.</span>
-              </div>
-            </div>
-            <div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-[24px]">chevron_right</span>
-            </div>
-          </div>
-
-          <!-- Card 3: Check for Scams -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors min-h-[84px] cursor-pointer" onclick="switchTab('safety')">
-            <div class="flex items-center gap-space-md min-w-0">
-              <div class="w-14 h-14 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
-                <span class="material-symbols-outlined text-[30px]">verified_user</span>
-              </div>
-              <div class="flex flex-col min-w-0">
-                <span class="font-label-lg text-label-lg text-on-surface leading-tight truncate">Check for Scams</span>
-                <span class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Check suspicious SMS, calls, or bank links.</span>
-              </div>
-            </div>
-            <div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-[24px]">chevron_right</span>
-            </div>
-          </div>
-
-          <!-- Card 4: My Reminders -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors min-h-[84px] cursor-pointer" onclick="switchTab('reminders')">
-            <div class="flex items-center gap-space-md min-w-0">
-              <div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
-                <span class="material-symbols-outlined text-[30px]">medication</span>
-              </div>
-              <div class="flex flex-col min-w-0">
-                <span class="font-label-lg text-label-lg text-on-surface leading-tight truncate">My Reminders</span>
-                <span class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Medicines, doctor visits, water reminders.</span>
-              </div>
-            </div>
-            <div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-[24px]">chevron_right</span>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- Today at a Glance Timeline -->
-      <section class="flex flex-col space-y-space-xs pt-1">
-        <div class="flex items-center justify-between">
-          <h2 class="font-headline-md text-headline-md text-primary">Today at a Glance</h2>
-          <span class="font-label-md text-label-md text-secondary">3 Items</span>
-        </div>
-        <div class="flex flex-col space-y-space-xs">
-          <!-- Item 1: Morning Medicine -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
-            <div class="flex items-start gap-space-sm min-w-0">
-              <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined text-[26px]">check_circle</span>
+        <!-- RIGHT COLUMN: Today's Timeline & Care Circle Status (5 Columns) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          
+          <!-- Today at a Glance Timeline -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex flex-col gap-5">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#184434] text-[26px]">today</span>
+                <h2 class="text-[20px] font-extrabold text-[#184434]">Today at a Glance</h2>
               </div>
-              <div class="flex flex-col min-w-0">
-                <div class="flex items-center gap-2">
-                  <span class="font-label-md text-label-md text-secondary line-through">08:00 AM</span>
-                  <span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-md text-[14px]">Taken</span>
-                </div>
-                <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">Morning Medicine</span>
-                <span class="font-body-md text-body-md text-on-surface-variant truncate">Metformin 500mg • After breakfast</span>
-              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-gray-600 font-bold text-[13px]">3 Schedule Items</span>
             </div>
-          </div>
 
-          <!-- Item 2: Daughter Call -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col space-y-space-sm border-2 border-tertiary-fixed">
-            <div class="flex items-start justify-between gap-space-sm">
-              <div class="flex items-start gap-space-sm min-w-0">
-                <div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
-                  <span class="material-symbols-outlined text-[26px]">phone_in_talk</span>
-                </div>
-                <div class="flex flex-col min-w-0">
-                  <div class="flex items-center gap-2">
-                    <span class="font-label-md text-label-md text-tertiary">10:30 AM</span>
-                    <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-md text-[14px]">Coming up next</span>
+            <div class="flex flex-col gap-4">
+              <!-- Item 1: Morning Medicine -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-gray-100 flex items-center justify-between gap-3">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-11 h-11 rounded-xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">check_circle</span>
                   </div>
-                  <span class="font-headline-md text-headline-md text-on-surface truncate">Call Anita (Daughter)</span>
-                  <span class="font-body-md text-body-md text-on-surface-variant">Weekly catch-up and health check</span>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[14px] font-bold text-gray-400 line-through">08:00 AM</span>
+                      <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-bold text-[12px]">Taken</span>
+                    </div>
+                    <h4 class="font-bold text-[17px] text-[#121d26] mt-0.5">Morning Medicine</h4>
+                    <p class="text-[14px] text-gray-600">Metformin 500mg • Taken after breakfast</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <a class="w-full min-h-[56px] rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="tel:9876543210">
-              <span class="material-symbols-outlined text-[24px]">call</span>
-              <span>Tap to Call Anita</span>
-            </a>
-          </div>
 
-          <!-- Item 3: Evening Medicine -->
-          <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
-            <div class="flex items-start gap-space-sm min-w-0">
-              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined text-[26px]">pill</span>
-              </div>
-              <div class="flex flex-col min-w-0">
-                <div class="flex items-center gap-2">
-                  <span class="font-label-md text-label-md text-primary">06:00 PM</span>
-                  <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-[14px]">Evening</span>
+              <!-- Item 2: Daughter Call -->
+              <div class="p-4 rounded-2xl bg-amber-50/60 border-2 border-amber-300 flex flex-col gap-3">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-amber-200 text-amber-900 flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[24px]">phone_in_talk</span>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[14px] font-extrabold text-amber-900">10:30 AM</span>
+                        <span class="px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 font-bold text-[12px]">Next Event</span>
+                      </div>
+                      <h4 class="font-bold text-[18px] text-[#121d26] mt-0.5">Call Anita (Daughter)</h4>
+                      <p class="text-[14px] text-gray-600">Weekly catch-up and health check</p>
+                    </div>
+                  </div>
                 </div>
-                <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">Evening Medicine</span>
-                <span class="font-body-md text-body-md text-on-surface-variant">Blood Pressure tablet (Amlodipine 5mg)</span>
+                <a class="w-full min-h-[46px] rounded-xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[15px] flex items-center justify-center gap-2 shadow-xs transition-all" href="tel:9876543210">
+                  <span class="material-symbols-outlined text-[20px]">call</span>
+                  <span>Tap to Call Anita</span>
+                </a>
+              </div>
+
+              <!-- Item 3: Evening Medicine -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-gray-100 flex items-center justify-between gap-3">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-11 h-11 rounded-xl bg-slate-200 text-[#184434] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">pill</span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[14px] font-bold text-[#184434]">06:00 PM</span>
+                      <span class="px-2 py-0.5 rounded-full bg-slate-200 text-gray-700 font-bold text-[12px]">Evening</span>
+                    </div>
+                    <h4 class="font-bold text-[17px] text-[#121d26] mt-0.5">Evening Medicine</h4>
+                    <p class="text-[14px] text-gray-600">Blood Pressure tablet (Amlodipine 5mg)</p>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-gray-400 text-[24px]">alarm</span>
               </div>
             </div>
-            <span class="material-symbols-outlined text-secondary text-[26px] mr-2">alarm</span>
           </div>
-        </div>
-      </section>
 
-      <!-- Reassuring Comfort Banner -->
-      <section class="bg-surface-container rounded-2xl p-space-md flex flex-col space-y-space-sm">
-        <div class="flex items-center gap-space-xs">
-          <span class="material-symbols-outlined text-primary text-[28px]">family_restroom</span>
-          <span class="font-label-lg text-label-lg text-primary">Family Circle Connected</span>
+          <!-- Reassuring Comfort Banner & Emergency Assistance -->
+          <div class="bg-emerald-50 rounded-3xl p-6 border border-emerald-200 flex flex-col gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-[#184434] text-white flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[28px]">family_restroom</span>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-[18px] text-[#121d26]">Family Circle Connected</h3>
+                <p class="text-[14px] text-gray-600 mt-0.5">Anita & Rohit can view your daily updates in real-time.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-between pt-2 border-t border-emerald-200/80">
+              <span class="text-[14px] text-gray-600 font-medium">Need immediate help?</span>
+              <a href="tel:911" class="px-4 py-2.5 rounded-full bg-white text-red-700 hover:bg-red-50 border border-red-200 font-bold text-[14px] shadow-xs flex items-center gap-1.5 transition-all active:scale-95">
+                <span class="material-symbols-outlined text-[18px] text-red-700">emergency</span> Emergency Assistance
+              </a>
+            </div>
+          </div>
+
         </div>
-        <p class="font-body-md text-body-md text-on-surface-variant">Anita &amp; Rohit can see your daily schedule and updates.</p>
-        <div class="flex items-center justify-between pt-1">
-          <span class="font-body-md text-body-md text-secondary">Need immediate help?</span>
-          <a href="tel:911" class="min-h-[48px] px-space-md rounded-full bg-surface-container-lowest text-tertiary font-label-md text-label-md shadow-sm flex items-center gap-1.5 active:scale-95 transition-transform">
-            <span class="material-symbols-outlined text-[20px]">emergency</span>Emergency Call
-          </a>
-        </div>
-      </section>
+
+      </div>
+
     </div>
 
 
     <!-- ==================== TAB 2: EXPLAIN THIS ==================== -->
-    <div id="view-explain" class="tab-view flex-col w-full pb-10">
-      <div class="pt-2 pb-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-primary font-label-md text-label-md mb-2">
-          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-          <span>Document Assistant</span>
-        </div>
-        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
-          Explain This To Me
-        </h2>
-        <p class="font-body-lg text-body-lg text-secondary mt-1">
-          Bills, prescriptions, letters, or anything confusing. Saarthi explains it in plain words.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-space-xs mb-space-md">
-        <button class="min-h-[64px] py-3 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" type="button" onclick="alert('Camera scanner opened! Point your camera at any document.')">
-          <span class="material-symbols-outlined text-[26px]">photo_camera</span>
-          <span>Take a Photo</span>
-        </button>
-        <button class="min-h-[64px] py-3 px-4 rounded-xl bg-secondary-container text-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" type="button" onclick="alert('File uploader opened! Select a prescription or letter.')">
-          <span class="material-symbols-outlined text-[26px]">upload_file</span>
-          <span>Upload File</span>
-        </button>
-      </div>
-
-      <!-- Scanned Result Card -->
-      <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm mb-space-md">
-        <div class="flex items-start gap-space-sm mb-space-sm">
-          <div class="relative w-20 h-24 rounded-lg overflow-hidden bg-surface-container shrink-0 shadow-inner flex items-center justify-center">
-            <span class="material-symbols-outlined text-primary text-[36px]">receipt_long</span>
+    <div id="view-explain" class="tab-view flex-col w-full space-y-6">
+      <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#184434] font-bold text-[14px] mb-2">
+            <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+            <span>Document Assistant</span>
           </div>
-          <div class="min-w-0 flex-1">
+          <h2 class="text-[30px] md:text-[36px] font-extrabold text-[#121d26] tracking-tight">
+            Explain This To Me
+          </h2>
+          <p class="text-[18px] text-gray-600 mt-1 max-w-2xl">
+            Bills, prescriptions, letters, or doctor notes. Saarthi explains everything in clear, comforting words without medical jargon.
+          </p>
+        </div>
+        <a class="px-6 py-3.5 rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[16px] flex items-center gap-2 shrink-0 transition-all shadow-md" href="explain.html">
+          <span class="material-symbols-outlined text-[22px]">open_in_new</span>
+          <span>Full Prescription Workflow</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
+            <h3 class="text-[20px] font-extrabold text-[#121d26]">Select Document Source</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <button class="min-h-[58px] py-3 px-4 rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[16px] flex items-center justify-center gap-2 shadow-sm transition-all" type="button" onclick="alert('Camera scanner opened! Point your camera at any document.')">
+                <span class="material-symbols-outlined text-[24px]">photo_camera</span>
+                <span>Take Photo</span>
+              </button>
+              <button class="min-h-[58px] py-3 px-4 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-[#184434] font-bold text-[16px] flex items-center justify-center gap-2 transition-all" type="button" onclick="alert('File uploader opened! Select a prescription or letter.')">
+                <span class="material-symbols-outlined text-[24px]">upload_file</span>
+                <span>Upload File</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
             <div class="flex items-center justify-between">
-              <span class="inline-block font-label-md text-label-md text-primary truncate">Dr. R. Kapoor, MD</span>
-              <span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-[14px]">Scanned</span>
+              <span class="font-bold text-[18px] text-[#184434]">Scanned Result</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-extrabold text-[13px]">Scanned</span>
             </div>
-            <p class="font-body-md text-body-md text-secondary mt-1 line-clamp-2">
-              Rx: Metformin 500mg tab, Amlodipine 5mg tab. Refill in 28 days.
-            </p>
-            <span class="inline-flex items-center gap-1 font-body-md text-body-md text-primary mt-1">
-              <span class="material-symbols-outlined text-[18px]">verified</span>
-              Verified Document
-            </span>
-          </div>
-        </div>
-
-        <div class="bg-surface-container-low rounded-xl p-space-sm mt-3">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-label-md text-label-md text-on-surface">AI Understanding Pipeline</span>
-            <span class="font-label-md text-[14px] text-primary font-bold">100% Complete</span>
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center gap-2">
-              <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[16px] shrink-0">
-                <span class="material-symbols-outlined text-[16px]">check</span>
-              </span>
-              <span class="font-body-md text-body-md text-on-surface">Prescription understood</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[16px] shrink-0">
-                <span class="material-symbols-outlined text-[16px]">check</span>
-              </span>
-              <span class="font-body-md text-body-md text-on-surface">2 reminders created</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plain Words Card -->
-      <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm mb-space-md">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-space-md">
-          <div>
-            <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
-              In Plain Words
-            </h3>
-            <p class="font-body-md text-body-md text-secondary">
-              No medical jargon. Here is what to do:
-            </p>
-          </div>
-          <button aria-label="Listen to Explanation aloud" class="min-h-[52px] px-4 rounded-full bg-primary text-on-primary flex items-center justify-center gap-2 self-start font-label-md text-label-md shadow-sm active:scale-95 transition-all" id="explainAudioBtn" type="button">
-            <span class="material-symbols-outlined text-[24px]" id="explainAudioIcon">volume_up</span>
-            <span id="explainAudioText">Listen Aloud</span>
-          </button>
-        </div>
-
-        <div class="space-y-space-md">
-          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
-            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg text-label-lg shrink-0">1</div>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[22px]">wb_sunny</span>
-                <h4 class="font-label-lg text-label-lg text-on-surface">Morning Routine</h4>
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-24 rounded-xl overflow-hidden bg-slate-100 border border-gray-200 shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[#184434] text-[40px]">receipt_long</span>
               </div>
-              <p class="font-body-xl text-body-xl text-on-surface font-semibold mt-1">Metformin (1 tablet) after breakfast.</p>
-              <p class="font-body-md text-body-md text-secondary mt-1">Take with food to avoid stomach upset.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
-            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg text-label-lg shrink-0">2</div>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[22px]">bedtime</span>
-                <h4 class="font-label-lg text-label-lg text-on-surface">Night Routine</h4>
+              <div>
+                <h4 class="font-extrabold text-[18px] text-[#121d26]">Dr. R. Kapoor, MD</h4>
+                <p class="text-[14px] text-gray-600 mt-0.5">Rx: Metformin 500mg, Amlodipine 5mg. Refill: 28 days.</p>
               </div>
-              <p class="font-body-xl text-body-xl text-on-surface font-semibold mt-1">Amlodipine (1 tablet) at 8:00 PM.</p>
-              <p class="font-body-md text-body-md text-secondary mt-1">Take with water before sleep.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
-            <div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center font-label-lg text-label-lg shrink-0">3</div>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-tertiary text-[22px]">event_repeat</span>
-                <h4 class="font-label-lg text-label-lg text-on-surface">Pharmacy Refill</h4>
-              </div>
-              <p class="font-body-xl text-body-xl text-on-surface font-semibold mt-1">Refill due in 28 days.</p>
-              <p class="font-body-md text-body-md text-secondary mt-1">Reminder scheduled 3 days prior.</p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm mb-space-md">
-        <div class="flex items-center gap-3">
-          <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
-            <span class="material-symbols-outlined text-[32px]">shield_with_heart</span>
-          </div>
-          <div class="min-w-0">
-            <h4 class="font-label-lg text-label-lg text-on-surface">Your Care Circle Informed</h4>
-            <p class="font-body-md text-body-md text-secondary">
-              A duplicate summary has been securely archived for family or caregivers.
-            </p>
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+              <h3 class="text-[22px] font-extrabold text-[#121d26]">In Plain Words</h3>
+              <button aria-label="Listen to Explanation aloud" class="px-4 py-2 rounded-full bg-[#184434] hover:bg-[#123327] text-white font-bold text-[14px] flex items-center gap-2 shadow-sm transition-all" id="explainAudioBtn" type="button">
+                <span class="material-symbols-outlined text-[20px]" id="explainAudioIcon">volume_up</span>
+                <span id="explainAudioText">Listen Aloud</span>
+              </button>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-gray-100 flex items-start gap-4">
+                <div class="w-9 h-9 rounded-full bg-[#184434] text-white font-bold flex items-center justify-center shrink-0">1</div>
+                <div>
+                  <h4 class="font-bold text-[17px] text-[#121d26]">Morning Routine</h4>
+                  <p class="text-[17px] font-extrabold text-[#184434] mt-0.5">Metformin (1 tablet) after breakfast.</p>
+                  <p class="text-[14px] text-gray-600">Take with food to avoid stomach upset.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-50 border border-gray-100 flex items-start gap-4">
+                <div class="w-9 h-9 rounded-full bg-[#184434] text-white font-bold flex items-center justify-center shrink-0">2</div>
+                <div>
+                  <h4 class="font-bold text-[17px] text-[#121d26]">Night Routine</h4>
+                  <p class="text-[17px] font-extrabold text-[#184434] mt-0.5">Amlodipine (1 tablet) at 8:00 PM.</p>
+                  <p class="text-[14px] text-gray-600">Take with water before sleep.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -463,217 +441,148 @@ tailwind.config = {
 
 
     <!-- ==================== TAB 3: TRUST SHIELD (SAFETY) ==================== -->
-    <div id="view-safety" class="tab-view flex-col w-full gap-space-md">
-      <!-- Trust Shield Hero Header -->
-      <section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-space-xs">
-            <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-primary shadow-sm">
-              <span class="material-symbols-outlined text-[34px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+    <div id="view-safety" class="tab-view flex-col w-full space-y-6">
+      <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-bold text-[14px] mb-2">
+            <span class="material-symbols-outlined text-[18px]">verified_user</span>
+            <span>Trust Shield Scam Defense</span>
+          </div>
+          <h2 class="text-[30px] md:text-[36px] font-extrabold text-[#121d26] tracking-tight">
+            Check for Scams
+          </h2>
+          <p class="text-[18px] text-gray-600 mt-1 max-w-2xl">
+            Not sure about a message, link, or caller? Let Saarthi read it carefully before you tap anything.
+          </p>
+        </div>
+        <a class="px-6 py-3.5 rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[16px] flex items-center gap-2 shrink-0 transition-all shadow-md" href="safety.html">
+          <span class="material-symbols-outlined text-[22px]">open_in_new</span>
+          <span>Full Trust Shield Page</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
+            <h3 class="font-bold text-[18px] text-[#121d26]">Choose what to verify:</h3>
+            <div class="grid grid-cols-3 gap-3">
+              <button class="p-3 rounded-2xl bg-[#184434] text-white font-bold text-[14px] flex flex-col items-center gap-1 shadow-sm" type="button" onclick="pasteSmsCheck()">
+                <span class="material-symbols-outlined text-[24px]">sms</span> Paste SMS
+              </button>
+              <button class="p-3 rounded-2xl bg-slate-100 text-[#121d26] font-bold text-[14px] flex flex-col items-center gap-1 border border-gray-200" type="button" onclick="alert('Screenshot scanner opened!')">
+                <span class="material-symbols-outlined text-[24px]">image</span> Screenshot
+              </button>
+              <button class="p-3 rounded-2xl bg-slate-100 text-[#121d26] font-bold text-[14px] flex flex-col items-center gap-1 border border-gray-200" type="button" onclick="alert('Camera scanner opened!')">
+                <span class="material-symbols-outlined text-[24px]">photo_camera</span> Photo
+              </button>
             </div>
-            <div class="flex flex-col">
-              <div class="flex items-center gap-1.5">
-                <h1 class="font-headline-md text-headline-md text-on-surface">Trust Shield</h1>
+          </div>
+
+          <div class="bg-[#FFFBF5] rounded-3xl p-6 border-2 border-amber-300 shadow-sm space-y-3">
+            <div class="flex items-center gap-2 text-amber-900 font-bold text-[15px]">
+              <span class="material-symbols-outlined text-[20px]">warning</span> Flagged Message Received
+            </div>
+            <p class="text-[16px] leading-relaxed text-[#121d26]">
+              "URGENT: Your State Bank account will be suspended today due to KYC. Click http://bit.ly/bank-kyc-update immediately."
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-[#FDF0D5] rounded-3xl p-6 border border-amber-300 shadow-sm flex flex-col gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#B54708] text-white flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[28px]">pan_tool</span>
               </div>
-              <span class="font-body-md text-body-md text-on-surface-variant">Active Protection for You</span>
+              <div>
+                <h3 class="text-[22px] font-extrabold text-[#B54708]">PAUSE — Hold on a moment</h3>
+                <p class="text-[17px] font-bold text-[#121d26] mt-0.5">This message looks unsafe. Do not click the link.</p>
+              </div>
             </div>
-          </div>
-          <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
-            <span class="material-symbols-outlined text-[24px]">explore</span>
-          </div>
-        </div>
-        <p class="font-body-lg text-body-lg text-on-surface mt-1">
-          Not sure about a message, link, or caller? Let Saarthi read it carefully before you tap anything.
-        </p>
-        <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant">
-          <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">spa</span>
-          <span class="font-body-md text-body-md">Take your time. You are safe and in control.</span>
-        </div>
-      </section>
 
-      <!-- Input Method Chips -->
-      <section class="flex flex-col gap-2">
-        <div class="flex items-center justify-between px-1">
-          <span class="font-label-md text-label-md text-on-surface">Choose what to verify:</span>
-          <span class="font-body-md text-body-md text-primary font-semibold">Free &amp; Private</span>
-        </div>
-        <div class="grid grid-cols-3 gap-2">
-          <button class="flex flex-col items-center justify-center min-h-[64px] p-2 rounded-2xl bg-primary text-on-primary shadow-sm active:scale-95 transition-transform text-center" type="button" onclick="pasteSmsCheck()">
-            <span class="material-symbols-outlined text-[26px]">sms</span>
-            <span class="font-label-md text-label-md mt-1 leading-tight">Paste SMS</span>
-          </button>
-          <button class="flex flex-col items-center justify-center min-h-[64px] p-2 rounded-2xl bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-transform text-center" type="button" onclick="alert('Screenshot scanner opened! Upload any phone screenshot.')">
-            <span class="material-symbols-outlined text-primary text-[26px]">image</span>
-            <span class="font-label-md text-label-md mt-1 leading-tight">Screenshot</span>
-          </button>
-          <button class="flex flex-col items-center justify-center min-h-[64px] p-2 rounded-2xl bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-transform text-center" type="button" onclick="alert('Camera opened! Point at printed letters or scam notices.')">
-            <span class="material-symbols-outlined text-primary text-[26px]">photo_camera</span>
-            <span class="font-label-md text-label-md mt-1 leading-tight">Take Photo</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Analyzed Message Sample Card -->
-      <section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-sm flex flex-col gap-space-xs">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2 text-on-surface-variant">
-            <span class="material-symbols-outlined text-[20px]">mark_chat_unread</span>
-            <span class="font-label-md text-label-md">Suspected Message Received</span>
-          </div>
-          <span class="bg-surface-container px-2.5 py-0.5 rounded-full text-on-surface-variant font-label-md text-label-md">10:14 AM</span>
-        </div>
-        <div class="bg-surface-container-low rounded-2xl p-space-sm text-on-surface font-body-lg text-body-lg select-text">
-          <p class="leading-relaxed">
-            <span class="font-label-md text-label-md text-tertiary">"URGENT:</span> Your State Bank account will be suspended today due to KYC. Click <span class="text-tertiary font-medium underline underline-offset-2">http://bit.ly/bank-kyc-update</span> immediately to keep active."
-          </p>
-        </div>
-      </section>
-
-      <!-- Calm Amber Assessment Result Banner -->
-      <section class="bg-[#FDF0D5] rounded-3xl p-space-md shadow-sm flex flex-col gap-space-sm text-on-surface">
-        <div class="flex items-start gap-space-xs">
-          <div class="w-12 h-12 rounded-full bg-[#B54708] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-            <span class="material-symbols-outlined text-[30px]">pan_tool</span>
-          </div>
-          <div class="flex flex-col">
-            <div class="inline-flex items-center gap-1.5">
-              <span class="font-headline-md text-headline-md text-[#B54708]">PAUSE</span>
-              <span class="font-label-lg text-label-lg text-[#B54708]">— Hold on a moment</span>
-            </div>
-            <p class="font-body-xl text-body-xl font-bold text-on-surface leading-tight mt-0.5">PAUSE — This message looks unsafe.</p>
+            <button class="w-full min-h-[52px] bg-white text-[#184434] rounded-2xl font-bold text-[16px] flex items-center justify-center gap-2 border border-amber-300 shadow-sm" id="safetyAudioBtn" type="button">
+              <span class="material-symbols-outlined text-[22px]" id="safetyAudioIcon">volume_up</span>
+              <span id="safetyAudioText">Hear Saarthi's Voice Advice</span>
+            </button>
           </div>
         </div>
-        <button class="w-full min-h-[58px] px-space-md py-space-xs bg-surface-container-lowest text-primary rounded-2xl shadow-sm flex items-center justify-center gap-space-xs active:scale-98 transition-transform" id="safetyAudioBtn" type="button">
-          <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
-            <span class="material-symbols-outlined text-[20px]" id="safetyAudioIcon">volume_up</span>
-          </div>
-          <span class="font-label-lg text-label-lg text-primary" id="safetyAudioText">Hear Saarthi's Voice Advice</span>
-        </button>
-      </section>
-
-      <!-- Why Saarthi is Concerned -->
-      <section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-sm flex flex-col gap-space-sm">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-[26px]">psychology</span>
-          <h2 class="font-label-lg text-label-lg text-on-surface">Why Saarthi is concerned:</h2>
-        </div>
-        <div class="flex flex-col gap-3">
-          <div class="flex items-start gap-3 p-3 rounded-2xl bg-surface-container-low">
-            <div class="w-8 h-8 rounded-full bg-[#FDF0D5] text-[#B54708] flex items-center justify-center shrink-0 mt-0.5">
-              <span class="material-symbols-outlined text-[20px]">schedule</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-label-md text-label-md text-on-surface">1. Creates artificial urgency</span>
-              <p class="font-body-md text-body-md text-on-surface-variant">Phrases like <span class="font-semibold text-on-surface">"suspended today"</span> pressure you into hasty action.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 p-3 rounded-2xl bg-surface-container-low">
-            <div class="w-8 h-8 rounded-full bg-[#FDF0D5] text-[#B54708] flex items-center justify-center shrink-0 mt-0.5">
-              <span class="material-symbols-outlined text-[20px]">link_off</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-label-md text-label-md text-on-surface">2. Unverified bank link</span>
-              <p class="font-body-md text-body-md text-on-surface-variant">The address <span class="font-semibold text-on-surface">"bit.ly"</span> is not an authentic State Bank web address.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- What you should do -->
-      <section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-sm flex flex-col gap-space-sm">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-[26px]">task_alt</span>
-          <h2 class="font-label-lg text-label-lg text-on-surface">What you should do:</h2>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-primary-fixed/30 text-on-primary-fixed-variant flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary text-[28px] shrink-0" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-          <p class="font-body-md text-body-md">
-            <strong class="font-label-md">Do not click the link.</strong> Your real bank account is completely safe right now.
-          </p>
-        </div>
-        <div class="flex flex-col gap-3 mt-1">
-          <button class="w-full min-h-[58px] px-space-md py-3 bg-error text-on-error rounded-2xl font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md active:scale-98 transition-transform" type="button" onclick="alert('Message deleted and sender blocked! You are safe.')">
-            <span class="material-symbols-outlined text-[24px]">delete_forever</span>
-            <span>Delete &amp; Block Sender</span>
-          </button>
-          <a class="w-full min-h-[58px] px-space-md py-3 bg-secondary-container text-on-secondary-fixed flex items-center justify-between rounded-2xl font-label-lg text-label-lg shadow-sm active:scale-98 transition-transform" href="tel:9876543210">
-            <div class="flex items-center gap-space-xs">
-              <span class="material-symbols-outlined text-primary text-[24px]">phone_in_talk</span>
-              <span>Call Anita (Daughter)</span>
-            </div>
-            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
-          </a>
-        </div>
-      </section>
+      </div>
     </div>
 
 
     <!-- ==================== TAB 4: REMINDERS ==================== -->
-    <div id="view-reminders" class="tab-view flex-col w-full space-y-space-md">
-      <div class="pt-2 pb-2">
-        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
-          My Reminders
-        </h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">
-          Daily medicines, doctor appointments, and hydration reminders.
-        </p>
+    <div id="view-reminders" class="tab-view flex-col w-full space-y-6">
+      <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-[30px] md:text-[36px] font-extrabold text-[#184434] tracking-tight">
+            My Reminders & Daily Schedule
+          </h2>
+          <p class="text-[18px] text-gray-600 mt-1">
+            Daily medicines, doctor visits, and hydration reminders managed effortlessly with Saarthi.
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="px-6 py-3.5 rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-bold text-[16px] flex items-center gap-2 shadow-md transition-all" onclick="addReminderModal()">
+            <span class="material-symbols-outlined text-[24px]">add_circle</span>
+            <span>Add New Reminder</span>
+          </button>
+          <a class="px-5 py-3.5 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-[#184434] font-bold text-[16px] flex items-center gap-2 transition-all" href="reminders.html">
+            <span class="material-symbols-outlined text-[22px]">open_in_new</span>
+            <span>Full Schedule Page</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Add Reminder Button -->
-      <button class="w-full min-h-[56px] rounded-2xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" onclick="addReminderModal()">
-        <span class="material-symbols-outlined text-[24px]">add_circle</span>
-        <span>Add New Reminder</span>
-      </button>
-
-      <!-- Reminders List -->
-      <div class="space-y-space-xs" id="reminders-container">
-        <!-- Morning Med -->
-        <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
-          <div class="flex items-start gap-space-sm min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-[26px]">check_circle</span>
-            </div>
-            <div class="flex flex-col min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="font-label-md text-label-md text-secondary line-through">08:00 AM</span>
-                <span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-md text-[14px]">Completed</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-4" id="reminders-container">
+          <!-- Morning Med -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[26px]">check_circle</span>
               </div>
-              <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">Metformin 500mg</span>
-              <span class="font-body-md text-body-md text-on-surface-variant">Morning after breakfast</span>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 font-bold line-through text-[15px]">08:00 AM</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-gray-600 font-bold text-[13px]">Completed</span>
+                </div>
+                <h3 class="text-[19px] font-extrabold text-[#121d26]">Metformin 500mg</h3>
+                <p class="text-[14px] text-gray-600">Morning after breakfast</p>
+              </div>
             </div>
+          </div>
+
+          <!-- Evening Med -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border-2 border-emerald-300 flex items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[26px]">pill</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[#184434] font-extrabold text-[15px]">06:00 PM</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-bold text-[13px]">Upcoming</span>
+                </div>
+                <h3 class="text-[19px] font-extrabold text-[#121d26]">Amlodipine 5mg</h3>
+                <p class="text-[14px] text-gray-600">Blood Pressure tablet at dinner</p>
+              </div>
+            </div>
+            <button class="px-4 py-2 rounded-xl bg-[#184434] text-white font-bold text-[14px]" onclick="alert('Marked as taken!')">Mark Taken</button>
           </div>
         </div>
 
-        <!-- Evening Med -->
-        <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
-          <div class="flex items-start gap-space-sm min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
-              <span class="material-symbols-outlined text-[26px]">pill</span>
-            </div>
-            <div class="flex flex-col min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="font-label-md text-label-md text-primary font-bold">06:00 PM</span>
-                <span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-[14px]">Upcoming</span>
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
+            <h3 class="font-extrabold text-[18px] text-[#121d26]">Reminder Preferences</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-gray-100">
+                <span class="font-bold text-[15px] text-[#121d26]">Voice Alerts</span>
+                <span class="px-3 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-bold text-[13px]">ON</span>
               </div>
-              <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">Amlodipine 5mg</span>
-              <span class="font-body-md text-body-md text-on-surface-variant">Blood Pressure tablet at dinner</span>
-            </div>
-          </div>
-          <button class="px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-[14px]" onclick="alert('Marked as taken!')">Mark Taken</button>
-        </div>
-
-        <!-- Dr Visit -->
-        <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
-          <div class="flex items-start gap-space-sm min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
-              <span class="material-symbols-outlined text-[26px]">medical_services</span>
-            </div>
-            <div class="flex flex-col min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="font-label-md text-label-md text-tertiary font-bold">Tomorrow 11:00 AM</span>
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-gray-100">
+                <span class="font-bold text-[15px] text-[#121d26]">Caregiver SMS</span>
+                <span class="px-3 py-0.5 rounded-full bg-emerald-100 text-[#184434] font-bold text-[13px]">ON</span>
               </div>
-              <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">Dr. R. Kapoor Consultation</span>
-              <span class="font-body-md text-body-md text-on-surface-variant">Routine checkup &amp; refill</span>
             </div>
           </div>
         </div>
@@ -682,67 +591,38 @@ tailwind.config = {
 
   </main>
 
-  <!-- CENTER FLOATING VOICE BUTTON -->
-  <div class="fixed bottom-24 inset-x-0 z-50 flex justify-center pointer-events-none px-margin-mobile">
-    <button aria-label="Talk to Saarthi" class="pointer-events-auto flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary rounded-full shadow-[0_8px_24px_rgba(49,92,74,0.3)] ring-4 ring-primary-fixed/40 active:scale-95 transition-all min-h-[56px]" type="button" onclick="openVoiceAssistant()">
-      <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
-        <span class="material-symbols-outlined text-[26px]">mic</span>
-      </div>
-      <span class="font-label-lg text-label-lg text-white pr-2">Talk to Saarthi</span>
-    </button>
-  </div>
-
-  <!-- BOTTOM NAVIGATION BAR -->
-  <nav class="fixed bottom-0 inset-x-0 z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]">
-    <div class="flex justify-around items-center h-20 px-space-xs max-w-lg mx-auto">
-      <button class="flex flex-col items-center justify-center min-w-[64px] min-h-[56px] transition-colors text-primary font-bold nav-tab" id="nav-home" onclick="switchTab('home')">
-        <span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">home</span>
-        <span class="font-label-md text-label-md mt-0.5">Home</span>
-      </button>
-      <button class="flex flex-col items-center justify-center min-w-[64px] min-h-[56px] text-on-surface-variant transition-colors nav-tab" id="nav-reminders" onclick="switchTab('reminders')">
-        <span class="material-symbols-outlined text-[30px]">alarm</span>
-        <span class="font-label-md text-label-md mt-0.5">Reminders</span>
-      </button>
-      <button class="flex flex-col items-center justify-center min-w-[64px] min-h-[56px] text-on-surface-variant transition-colors nav-tab" id="nav-safety" onclick="switchTab('safety')">
-        <span class="material-symbols-outlined text-[30px]">shield</span>
-        <span class="font-label-md text-label-md mt-0.5">Safety</span>
-      </button>
-      <button class="flex flex-col items-center justify-center min-w-[64px] min-h-[56px] text-on-surface-variant transition-colors nav-tab" id="nav-explain" onclick="switchTab('explain')">
-        <span class="material-symbols-outlined text-[30px]">description</span>
-        <span class="font-label-md text-label-md mt-0.5">Explain</span>
-      </button>
-    </div>
-  </nav>
-
   <!-- VOICE ASSISTANT MODAL OVERLAY -->
-  <div id="voiceModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex-col justify-end p-margin-mobile">
-    <div class="bg-surface-container-lowest rounded-3xl p-space-md shadow-2xl flex flex-col space-y-space-md max-w-lg mx-auto w-full">
+  <div id="voiceModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex-col items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col space-y-6 max-w-xl mx-auto w-full border border-gray-200">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[28px]">graphic_eq</span>
           </div>
-          <span class="font-headline-md text-headline-md text-primary">Listening to you...</span>
+          <div>
+            <h3 class="text-[22px] font-extrabold text-[#184434]">Listening to you...</h3>
+            <p class="text-[14px] text-gray-500">Speak naturally in Hindi or English</p>
+          </div>
         </div>
-        <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="closeVoiceAssistant()">
+        <button class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-gray-700" onclick="closeVoiceAssistant()">
           <span class="material-symbols-outlined text-[24px]">close</span>
         </button>
       </div>
 
-      <div class="p-space-md bg-surface-container-low rounded-2xl min-h-[100px] flex items-center justify-center text-center" id="voiceDialogueText">
-        <p class="font-body-xl text-body-xl text-on-surface font-medium">"I am listening Mrs. Sharma. What can I help you with today?"</p>
+      <div class="p-6 bg-slate-50 border border-gray-200 rounded-2xl min-h-[120px] flex items-center justify-center text-center" id="voiceDialogueText">
+        <p class="text-[20px] text-[#121d26] font-bold">"I am listening Mrs. Sharma. What can I help you with today?"</p>
       </div>
 
-      <div class="grid grid-cols-2 gap-2">
-        <button class="p-3 bg-surface-container rounded-xl text-left font-body-md text-body-md text-on-surface" onclick="simulateVoiceQuery('What is my medicine schedule today?')">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button class="p-4 bg-white hover:bg-slate-50 border border-gray-200 rounded-2xl text-left font-bold text-[15px] text-[#121d26] transition-all shadow-xs" onclick="simulateVoiceQuery('What is my medicine schedule today?')">
           "What is my medicine schedule today?"
         </button>
-        <button class="p-3 bg-surface-container rounded-xl text-left font-body-md text-body-md text-on-surface" onclick="simulateVoiceQuery('Is this text message a scam?')">
+        <button class="p-4 bg-white hover:bg-slate-50 border border-gray-200 rounded-2xl text-left font-bold text-[15px] text-[#121d26] transition-all shadow-xs" onclick="simulateVoiceQuery('Is this text message a scam?')">
           "Is this text message a scam?"
         </button>
       </div>
 
-      <button class="w-full min-h-[56px] rounded-xl bg-primary text-on-primary font-label-lg text-label-lg" onclick="closeVoiceAssistant()">
+      <button class="w-full min-h-[54px] rounded-2xl bg-[#184434] hover:bg-[#123327] text-white font-extrabold text-[17px] shadow-md transition-all" onclick="closeVoiceAssistant()">
         Done Speaking
       </button>
     </div>
@@ -756,14 +636,14 @@ tailwind.config = {
       if (activeView) activeView.classList.add('active');
 
       document.querySelectorAll('.nav-tab').forEach(btn => {
-        btn.classList.remove('text-primary', 'font-bold');
-        btn.classList.add('text-on-surface-variant');
+        btn.classList.remove('text-[#184434]', 'bg-emerald-100');
+        btn.classList.add('text-gray-600');
       });
 
       const activeNav = document.getElementById('nav-' + tabId);
       if (activeNav) {
-        activeNav.classList.remove('text-on-surface-variant');
-        activeNav.classList.add('text-primary', 'font-bold');
+        activeNav.classList.remove('text-gray-600');
+        activeNav.classList.add('text-[#184434]', 'bg-emerald-100');
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -779,9 +659,9 @@ tailwind.config = {
       readBtn.addEventListener('click', () => {
         isSpeakingHome = !isSpeakingHome;
         if (isSpeakingHome) {
-          audioIcon.textContent = 'graphic_eq';
-          audioText.textContent = 'Speaking summary...';
-          readBtn.classList.add('bg-primary-fixed');
+          if (audioIcon) audioIcon.textContent = 'graphic_eq';
+          if (audioText) audioText.textContent = 'Speaking summary...';
+          readBtn.classList.add('bg-emerald-100');
           speakSpeech('Good morning Mrs. Sharma. Your day looks calm and peaceful. Anita will call you at ten thirty am, and your morning medicine has been recorded as taken.', () => resetHomeAudio());
         } else {
           stopSpeech();
@@ -793,8 +673,8 @@ tailwind.config = {
     function resetHomeAudio() {
       isSpeakingHome = false;
       if (audioIcon) audioIcon.textContent = 'volume_up';
-      if (audioText) audioText.textContent = 'Play audio summary';
-      if (readBtn) readBtn.classList.remove('bg-primary-fixed');
+      if (audioText) audioText.textContent = 'Read Screen';
+      if (readBtn) readBtn.classList.remove('bg-emerald-100');
     }
 
     // Voice Readout for Explain page
@@ -807,9 +687,9 @@ tailwind.config = {
         const icon = document.getElementById('explainAudioIcon');
         const text = document.getElementById('explainAudioText');
         if (isSpeakingExplain) {
-          icon.textContent = 'graphic_eq';
-          text.textContent = 'Speaking...';
-          speakSpeech('Here is your prescription explained simply. First, Metformin one tablet after breakfast with food. Second, Amlodipine one tablet at eight PM before sleep. Third, your refill is due in 28 days.', () => resetExplainAudio());
+          if (icon) icon.textContent = 'graphic_eq';
+          if (text) text.textContent = 'Speaking...';
+          speakSpeech('Here is your prescription explained simply. First, Metformin one tablet after breakfast with food. Second, Amlodipine one tablet at eight PM before sleep.', () => resetExplainAudio());
         } else {
           stopSpeech();
           resetExplainAudio();
@@ -835,9 +715,9 @@ tailwind.config = {
         const icon = document.getElementById('safetyAudioIcon');
         const text = document.getElementById('safetyAudioText');
         if (isSpeakingSafety) {
-          icon.textContent = 'graphic_eq';
-          text.textContent = 'Speaking Voice Advice...';
-          speakSpeech('Hold on a moment, Mrs. Sharma. This message looks unsafe. It creates fake urgency by saying your bank account will be suspended today. Please do not tap the link. Your account is completely safe right now.', () => resetSafetyAudio());
+          if (icon) icon.textContent = 'graphic_eq';
+          if (text) text.textContent = 'Speaking Voice Advice...';
+          speakSpeech('Hold on a moment, Mrs. Sharma. This message looks unsafe. It creates fake urgency by saying your bank account will be suspended today. Please do not tap the link.', () => resetSafetyAudio());
         } else {
           stopSpeech();
           resetSafetyAudio();
@@ -875,33 +755,41 @@ tailwind.config = {
 
     // Voice Modal Controls
     function openVoiceAssistant() {
-      document.getElementById('voiceModal').classList.remove('hidden');
-      document.getElementById('voiceModal').classList.add('flex');
-      speakSpeech('I am listening Mrs. Sharma. Tell me what you need.', null);
+      const modal = document.getElementById('voiceModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        speakSpeech('I am listening Mrs. Sharma. Tell me what you need.', null);
+      }
     }
 
     function closeVoiceAssistant() {
       stopSpeech();
-      document.getElementById('voiceModal').classList.add('hidden');
-      document.getElementById('voiceModal').classList.remove('flex');
+      const modal = document.getElementById('voiceModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
     }
 
     function simulateVoiceQuery(query) {
       const dialogue = document.getElementById('voiceDialogueText');
-      dialogue.innerHTML = `<p class="font-body-xl text-body-xl text-primary font-bold">"${query}"</p>`;
-      stopSpeech();
-      setTimeout(() => {
-        if (query.includes('medicine')) {
-          dialogue.innerHTML = `<p class="font-body-xl text-body-xl text-on-surface font-medium">"You took your morning Metformin at 8:00 AM. Next is your blood pressure tablet at 6:00 PM."</p>`;
-          speakSpeech('You took your morning Metformin at eight AM. Next is your blood pressure tablet at six PM.', null);
-        } else if (query.includes('scam')) {
-          dialogue.innerHTML = `<p class="font-body-xl text-body-xl text-tertiary font-bold">"Warning: Always hold on if a text asks for urgent bank details. Let's inspect it together in Safety Shield."</p>`;
-          speakSpeech("Warning. Always hold on if a text asks for urgent bank details. Let's inspect it together in Safety Shield.", () => {
-            closeVoiceAssistant();
-            switchTab('safety');
-          });
-        }
-      }, 1200);
+      if (dialogue) {
+        dialogue.innerHTML = `<p class="text-[20px] text-[#184434] font-extrabold">"${query}"</p>`;
+        stopSpeech();
+        setTimeout(() => {
+          if (query.includes('medicine')) {
+            dialogue.innerHTML = `<p class="text-[18px] text-[#121d26] font-bold">"You took your morning Metformin at 8:00 AM. Next is your blood pressure tablet at 6:00 PM."</p>`;
+            speakSpeech('You took your morning Metformin at eight AM. Next is your blood pressure tablet at six PM.', null);
+          } else if (query.includes('scam')) {
+            dialogue.innerHTML = `<p class="text-[18px] text-amber-900 font-extrabold">"Warning: Always hold on if a text asks for urgent bank details. Let's inspect it together in Safety Shield."</p>`;
+            speakSpeech("Warning. Always hold on if a text asks for urgent bank details. Let's inspect it together in Safety Shield.", () => {
+              closeVoiceAssistant();
+              switchTab('safety');
+            });
+          }
+        }, 1200);
+      }
     }
 
     function pasteSmsCheck() {
@@ -915,25 +803,27 @@ tailwind.config = {
       const name = prompt("Enter reminder title (e.g., Take Vitamin D):");
       if (name) {
         const container = document.getElementById('reminders-container');
-        const card = document.createElement('div');
-        card.className = "bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between gap-space-sm";
-        card.innerHTML = `
-          <div class="flex items-start gap-space-sm min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
-              <span class="material-symbols-outlined text-[26px]">alarm</span>
-            </div>
-            <div class="flex flex-col min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="font-label-md text-label-md text-primary font-bold">Scheduled</span>
+        if (container) {
+          const card = document.createElement('div');
+          card.className = "bg-white rounded-3xl p-6 shadow-sm border border-gray-200 flex items-center justify-between gap-4";
+          card.innerHTML = `
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-[#184434] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[26px]">alarm</span>
               </div>
-              <span class="font-body-lg text-body-lg text-on-surface font-semibold truncate">${name}</span>
-              <span class="font-body-md text-body-md text-on-surface-variant">Daily Reminder</span>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[#184434] font-extrabold text-[15px]">Scheduled</span>
+                </div>
+                <h3 class="text-[19px] font-extrabold text-[#121d26]">${name}</h3>
+                <p class="text-[14px] text-gray-600">Daily Reminder</p>
+              </div>
             </div>
-          </div>
-          <button class="px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-[14px]" onclick="alert('Marked as done!')">Mark Done</button>
-        `;
-        container.prepend(card);
-        speakSpeech(`Reminder for ${name} has been set!`, null);
+            <button class="px-4 py-2 rounded-xl bg-[#184434] text-white font-bold text-[14px]" onclick="alert('Marked as done!')">Mark Done</button>
+          `;
+          container.prepend(card);
+          speakSpeech(`Reminder for ${name} has been set!`, null);
+        }
       }
     }
   </script>
